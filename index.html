@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTML nella slide</title>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Schermata di scelta: visibile finché non c'è un HTML salvato -->
+  <section id="scelta" hidden>
+    <div class="card">
+      <div class="logo">&lt;/&gt;</div>
+      <h1>HTML interattivo nella slide</h1>
+      <p>Scegli un file <b>.html</b>: verrà salvato <b>dentro la presentazione</b> e mostrato qui, anche durante la presentazione a schermo intero.</p>
+      <label class="btn primario">
+        Scegli file HTML…
+        <input id="file" type="file" accept=".html,.htm,text/html" hidden>
+      </label>
+      <div class="oppure">oppure mostra una pagina web</div>
+      <form id="formUrl" class="riga">
+        <input id="url" type="url" placeholder="https://…" required>
+        <button class="btn" type="submit">Mostra</button>
+      </form>
+      <p id="msg" class="msg"></p>
+    </div>
+  </section>
+
+  <!-- Contenuto -->
+  <iframe id="vista" hidden
+    sandbox="allow-scripts allow-popups allow-forms allow-pointer-lock allow-modals allow-downloads"
+    allow="fullscreen; autoplay; clipboard-write"></iframe>
+
+  <!-- Barra comandi: solo in modalità modifica, compare al passaggio del mouse -->
+  <nav id="barra" hidden>
+    <span id="nome"></span>
+    <button id="ricarica" title="Riavvia l'HTML">Riavvia</button>
+    <button id="sostituisci" title="Scegli un altro file">Sostituisci</button>
+    <button id="rimuovi" title="Togli il contenuto">Rimuovi</button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
